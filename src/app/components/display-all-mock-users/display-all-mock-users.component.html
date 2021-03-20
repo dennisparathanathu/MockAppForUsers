@@ -1,0 +1,31 @@
+<div class="container">
+  <h1 class="text-center"> All User details</h1>  
+    <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <ng-container matColumnDef="username">
+        <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+        <mat-cell *matCellDef="let user"> {{user.userName}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="email">
+        <mat-header-cell *matHeaderCellDef> E-Mail </mat-header-cell>
+        <mat-cell *matCellDef="let user"> {{user.email}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="phone">
+        <mat-header-cell *matHeaderCellDef> Phone </mat-header-cell>
+        <mat-cell *matCellDef="let user"> {{user.phone}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="age">
+        <mat-header-cell *matHeaderCellDef>Age</mat-header-cell>
+        <mat-cell *matCellDef="let user"> {{user.age}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="operations">
+        <mat-header-cell *matHeaderCellDef>Operations</mat-header-cell>
+        <md-cell *matCellDef="let user" >                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
+          <a mat-button (click)="openDialog(user)" class="btn btn-primary"> View user </a>
+          <a mat-button (click)="opendeletedialog(user)" class="btn btn-danger"> Delete</a>
+        </md-cell>
+      </ng-container>
+      
+      <mat-header-row *matHeaderRowDef="displayedColumns" style="background-color:pink;color:white;"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+  </div>

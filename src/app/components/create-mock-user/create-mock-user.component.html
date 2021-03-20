@@ -1,0 +1,44 @@
+<div class="container">
+  <div >
+<mat-toolbar>
+    <span>Add User</span>
+  </mat-toolbar>
+  <mat-card class="my-card">
+    <mat-card-content>
+        <form class="my-form">
+           <mat-form-field class="full-width">
+                  <mat-label>Username</mat-label>
+                  <input  matInput  placeholder="User name"  name="username" maxlength="50" required [(ngModel)]="user.Username" >
+               </mat-form-field>
+               
+              
+               <mat-form-field class="full-width">
+                  <mat-label>Email</mat-label>
+                  <input  matInput  placeholder="Email" name="email" maxlength="50" email required [(ngModel)]="user.Email" >
+               </mat-form-field>
+               <mat-form-field class="full-width">
+                  <mat-label>Phone</mat-label>
+                  <input  matInput  placeholder="Phone number"  name="phonenumber" maxlength="10" required [(ngModel)]="user.Phone" >
+               </mat-form-field>
+               <mat-form-field class="full-width">
+                <mat-label>Age</mat-label>
+                <input  matInput  placeholder="Enter age"  name="age" maxlength="2" required [(ngModel)]="user.Age" >
+             </mat-form-field>
+               <section class="example-section">
+                <label class="example-margin">Gender:</label>
+                <mat-radio-group >
+                  <mat-radio-button class="example-margin" name="gender" [value]="m" [(ngModel)]="user.gender">Male</mat-radio-button>
+                  <mat-radio-button class="example-margin" name="gender" [value]="f" [(ngModel)]="user.gender">Female</mat-radio-button>
+                  <mat-radio-button class="example-margin" name="gender" [value]="o" [(ngModel)]="user.gender">Other</mat-radio-button>
+                </mat-radio-group>
+              </section>
+        </form>
+      </mat-card-content>   
+      <mat-card-actions>
+        <button mat-raised-button (click)="addUser()" color="primary">ADD USER</button>
+      </mat-card-actions>
+  </mat-card>
+</div>
+</div>
+  
+  
