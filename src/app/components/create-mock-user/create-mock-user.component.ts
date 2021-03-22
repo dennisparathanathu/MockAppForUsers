@@ -38,7 +38,7 @@ export class CreateMockUserComponent implements OnInit {
     this.service.adduser(data).subscribe(res=>{
       console.log(res);
       console.log(res.data.message)
-      alert(" user created successfully");
+      alert(" user added successfully");
       this.submitted = true;
       this.route.navigate['/displayallusers']
     },error =>{

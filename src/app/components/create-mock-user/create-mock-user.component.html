@@ -1,11 +1,11 @@
 <div class="container">
   <div >
-<mat-toolbar>
+<mat-toolbar class="text-center">
     <span>Add User</span>
   </mat-toolbar>
   <mat-card class="my-card">
     <mat-card-content>
-        <form class="my-form">
+        <form class="my-form pagination-center text-center">
            <mat-form-field class="full-width">
                   <mat-label>Username</mat-label>
                   <input  matInput  placeholder="User name"  name="username" maxlength="50" required [(ngModel)]="user.Username" >
@@ -26,16 +26,19 @@
              </mat-form-field>
                <section class="example-section">
                 <label class="example-margin">Gender:</label>
+                &nbsp;
                 <mat-radio-group >
-                  <mat-radio-button class="example-margin" name="gender" [value]="m" [(ngModel)]="user.gender">Male</mat-radio-button>
-                  <mat-radio-button class="example-margin" name="gender" [value]="f" [(ngModel)]="user.gender">Female</mat-radio-button>
-                  <mat-radio-button class="example-margin" name="gender" [value]="o" [(ngModel)]="user.gender">Other</mat-radio-button>
+                  <mat-radio-button class="example-margin" ng-control="gender" name="gender" value="M" [(ngModel)]="user.gender" [checked]="user.gender==='M'">Male</mat-radio-button>
+                    &nbsp;
+                  <mat-radio-button class="example-margin" name="gender" ng-control="gender" value="F" [(ngModel)]="user.gender" [checked]="user.gender==='F'">Female</mat-radio-button>
+                  &nbsp;
+                  <mat-radio-button class="example-margin" name="gender" ng-control="gender" value="O" [(ngModel)]="user.gender" [checked]="user.gender==='O'">Other</mat-radio-button>
                 </mat-radio-group>
               </section>
         </form>
       </mat-card-content>   
       <mat-card-actions>
-        <button mat-raised-button (click)="addUser()" color="primary">ADD USER</button>
+        <button mat-raised-button class="text-center" (click)="addUser()" color="primary">ADD USER</button>
       </mat-card-actions>
   </mat-card>
 </div>
